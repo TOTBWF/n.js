@@ -1,0 +1,7 @@
+#+TITLE: n.js
+
+This repo is a collection of visualizations of higher dimensional
+constructs.
+
+Some links:
+- [[https://totbwf.github.io/n.js/hopf.html][Hopf Fibration]]
