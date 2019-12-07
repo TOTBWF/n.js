@@ -10,7 +10,13 @@
          margin: 0;
          background-color: black;
      }
-     #canvas {
+     #major {
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: -2;
+     }
+     #minor {
          position: absolute;
          top: 0;
          left: 0;
@@ -27,7 +33,8 @@
     <div style="text-align: center">
       <a href=https://en.wikipedia.org/wiki/Hopf_fibration>Hopf Fibration</a>
     </div>
-    <canvas id="canvas"></canvas>
+    <canvas id="major"></canvas>
+    <canvas id="minor"></canvas>
     <script src="./hopf.js"></script>
   </body>
 </html>
