@@ -14,7 +14,7 @@ function init() {
     let point = new THREE.PointLight(0xffffff);
     scene.add(ambient);
     scene.add(point);
-    let sphere = twoSphere(1, 5, 20)
+    let sphere = twoSphere(1, 5, 30)
     sphere.forEach(base => scene.add(renderFiber(fiber(base), base)))
     camera.position.z = 5;
     animate()
