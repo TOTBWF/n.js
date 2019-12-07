@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
     <script src="./lib/OrbitalControls.js"></script>
+    <style>
+     body {
+         margin: 0;
+         background-color: black;
+     }
+     #canvas {
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: -1;
+     }
+     p {
+         margin-top: 8px;
+         color: white;
+         text-align: center;
+     }
+    </style>
   </head>
   <body>
+    <p>Hopf Fibration</p>
+    <canvas id="canvas"></canvas>
     <script src="./hopf.js"></script>
   </body>
 </html>

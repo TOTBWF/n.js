@@ -1,9 +1,9 @@
 let renderer, camera, controls, scene;
 
 function init() {
-    let canvas = document.getElementById("c");
+    let canvas = document.getElementById("canvas");
     camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({ canvas: canvas });
     scene = new THREE.Scene();
 
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -14,16 +14,10 @@ function init() {
     let point = new THREE.PointLight(0xffffff);
     scene.add(ambient);
     scene.add(point);
-    let sphere = twoSphere(1, 4, 20)
+    let sphere = twoSphere(1, 5, 20)
     sphere.forEach(base => scene.add(renderFiber(fiber(base), base)))
-    camera.position.z = 1;
+    camera.position.z = 5;
     animate()
-}
-
-function colorize(v3) {
-    let n = v3.clone().normalize()
-    let color = new THREE.Color().setHSL(n.x, 1, 0.5)
-    return color
 }
 
 function animate() {
@@ -56,7 +50,11 @@ function fiber(base) {
 function renderFiber(points, base) {
     let geometry = new THREE.Geometry()
     geometry.vertices = points
-    let material = new THREE.LineBasicMaterial( { color: colorize(base) } );
+    let color = new THREE.Color().setHSL(base.x, 1, -0.2*base.z + 0.3)
+    let material = new THREE.LineBasicMaterial({
+        color: color,
+        opacity: (1/(1 + base.z))
+    })
     return new THREE.LineLoop(geometry, material)
 }
 
