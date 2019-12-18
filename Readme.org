@@ -5,3 +5,4 @@ constructs.
 
 Some links:
 - [[https://totbwf.github.io/n.js/hopf.html][Hopf Fibration]]
+- [[https://totbwf.github.io/n.js/cube.html][Homogenous Kan Filling]]
